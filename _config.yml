@@ -21,6 +21,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 #url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
 #github_username:  jekyll
+permalink: :title
 
 repository: "nicolas-van/nicolas-van.github.io"
 
@@ -39,3 +40,5 @@ exclude:
   - Gemfile.lock
   - node_modules
   - update_boostrap.sh
+
+show_excerpts: true
