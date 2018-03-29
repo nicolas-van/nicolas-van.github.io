@@ -2,6 +2,8 @@
 title: Programming with fish shell
 ---
 
+<img src="{{ "/img/fishfish_logo2.png" | absolute_url }}" class="w-100">
+
 [Fish](http://fishshell.com/) is really a good shell that I’m using everyday since two years now. Unfortunately there is not much guides about how to program using it. That’s sad because fish has a lot of advantages over bash to write scripts: cleaner and easier to remember syntax, good variables escaping, etc.. So I decided to write a small tutorial on the subject.
 
 By “programming” I mean making small program that can realize simple mathematical operations, apply algorithms, etc… Yes, as strange as it way seem even when reading the full fish documentation it’s still easier to make such basic things in C rather than fish or bash. That is, in my opinion, because that documentation (which is quite good indeed) mainly speaks about an interactive shell rather than about a programming language. This article aims to correct that point.
