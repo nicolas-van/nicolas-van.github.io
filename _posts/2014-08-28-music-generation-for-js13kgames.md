@@ -1,6 +1,6 @@
 ---
 title: Music Generation for js13kGames
-image: /assets/img/music_sunshine.jpg
+image: /img/music_sunshine.jpg
 ---
 
 [js13kGames](http://js13kgames.com/) is a yearly game development competition created by [Andrzej Mazur](https://twitter.com/end3r). It runs for a month and has one main constraint: don’t go over 13k. It’s quite similar to a lot of demo competitions, but for JavaScript games.
