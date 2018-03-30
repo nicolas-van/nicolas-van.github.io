@@ -16,6 +16,12 @@ layout: default
     </p>
   </header>
   
+  {%- if post.image -%}
+  <div>
+    <img class="w-100" src="{{ post.image | relative_url }}">
+  </div>
+  {%- endif %}
+  
   <div>
     {% include social_buttons.html %}
   </div>
