@@ -6,4 +6,4 @@ I'm very happy today to learn that [Let's Encrypt is now providing wilcard certi
 
 As a reminder Let's Encrypt is a free certificate authority providing SSL/TLS certificates for free using an automated process since December 2015. In a few months they became the number 1 certificate authority in the world.
 
-This news make this service even more awesome that it was already.
+This news make this service even more awesome than it was already.
