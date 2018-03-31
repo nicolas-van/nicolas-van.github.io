@@ -29,8 +29,8 @@ layout: default
           {{ post.date | date: date_format }}
         </p>
         {% if post.image %}
-        <div class="mb-3">
-          <img class="w-100" src="{{ post.image | relative_url }}">
+        <div class="post-image mb-3">
+          <img src="{{ post.image | relative_url }}">
         </div>
         {% endif %}
         {%- if site.show_excerpts -%}
