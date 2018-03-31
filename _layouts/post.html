@@ -16,9 +16,9 @@ layout: default
     </p>
   </header>
   
-  {%- if post.image -%}
+  {%- if page.image -%}
   <div>
-    <img class="w-100" src="{{ post.image | relative_url }}">
+    <img class="w-100" src="{{ page.image | relative_url }}">
   </div>
   {%- endif %}
   
