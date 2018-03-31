@@ -1,8 +1,7 @@
 ---
 title: Programming with fish shell
+image: /assets/img/fishfish_logo2.png
 ---
-
-<img src="{{ "/img/fishfish_logo2.png" | absolute_url }}" class="w-100">
 
 [Fish](http://fishshell.com/) is really a good shell that I’m using everyday since two years now. Unfortunately there is not much guides about how to program using it. That’s sad because fish has a lot of advantages over bash to write scripts: cleaner and easier to remember syntax, good variables escaping, etc.. So I decided to write a small tutorial on the subject.
 

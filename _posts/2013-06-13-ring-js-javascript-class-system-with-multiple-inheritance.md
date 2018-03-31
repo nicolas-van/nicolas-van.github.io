@@ -1,8 +1,7 @@
 ---
 title: Ring.js – JavaScript Class System with Multiple Inheritance
+image: /assets/img/ring_2.png
 ---
-
-<img src="{{ "/img/ring_2.png" | absolute_url }}" class="w-100">
 
 [Ring.js](http://ringjs.neoname.eu/) is JavaScript library implementing a multiple inheritance model for the JavaScript language.
 

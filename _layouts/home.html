@@ -28,9 +28,11 @@ layout: default
           {%- assign date_format = "%b %-d, %Y" -%}
           {{ post.date | date: date_format }}
         </p>
+        {% if post.image %}
         <div class="mb-3">
-          <img class="w-100" src="{{ post.image | relative_url ]]">
+          <img class="w-100" src="{{ post.image | relative_url }}">
         </div>
+        {% endif %}
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
         {%- endif -%}
