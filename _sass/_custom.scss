@@ -9,3 +9,29 @@
     height: 100%;
   }
 }
+
+.social-buttons {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  
+  > div {
+    align-self: center;
+    padding-left: 10px;
+    &:first-child {
+      padding-left: 0px;
+    }
+  }
+  
+  .social-buttons__twitter {
+    height: 20px;
+  }
+  
+  .social_buttons__reddit {
+    height: 20px;
+    > * {
+      margin-top: -4px;
+      display: block;
+    }
+  }
+}
