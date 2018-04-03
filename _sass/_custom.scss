@@ -1,7 +1,13 @@
 
+.article {
+  @extend .border;
+  @extend .p-3;
+  @extend .bg-white;
+}
+
 .post-image {
   height: 230px;
-  
+
   img {
     object-fit: cover;
     object-position: center top;
@@ -14,7 +20,7 @@
   display: flex;
   align-items: center;
   align-content: center;
-  
+
   > div {
     align-self: center;
     padding-left: 10px;
@@ -22,11 +28,11 @@
       padding-left: 0px;
     }
   }
-  
+
   .social-buttons__twitter {
     height: 20px;
   }
-  
+
   .social_buttons__reddit {
     height: 20px;
     > * {

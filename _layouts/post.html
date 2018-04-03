@@ -1,10 +1,15 @@
 ---
 layout: default
 ---
-<article>
+<article class="article">
 
   <header>
     <h1>{{ page.title | escape }}</h1>
+    {%- if page.image -%}
+    <div class="post-image mb-3">
+      <img src="{{ page.image | relative_url }}">
+    </div>
+    {%- endif %}
     <p class="text-muted">
       <time datetime="{{ page.date | date_to_xmlschema }}">
         {%- assign date_format = "%b %-d, %Y" -%}
@@ -15,13 +20,7 @@ layout: default
       {%- endif -%}
     </p>
   </header>
-  
-  {%- if page.image -%}
-  <div class="post-image mb-3">
-    <img src="{{ page.image | relative_url }}">
-  </div>
-  {%- endif %}
-  
+
   <div class="mb-2">
     {% include social_buttons.html %}
   </div>
@@ -29,7 +28,7 @@ layout: default
   <section>
     {{ content }}
   </section>
-  
+
   <footer>
     {% include disqus.html %}
   </footer>
