@@ -15,10 +15,12 @@ layout: default
   </section>
 
   {%- if site.posts.size > 0 -%}
-  <p class="h4">{{ page.list_title | default: "Posts" }}</p>
+  <div class="article mb-4">
+    <p class="h4 mb-3">{{ page.list_title | default: "Posts" }}</p>
+  </div>
   <ul class="list-unstyled">
     {%- for post in site.posts -%}
-    <li class="article mb-5">
+    <li class="article mb-4">
       <p class="h5 mb-2">
         <a href="{{ post.url | relative_url }}">
           {{ post.title | escape }}
@@ -26,7 +28,9 @@ layout: default
       </p>
       {% if post.image %}
       <div class="post-image mb-2 mt-3">
-        <img src="{{ post.image | relative_url }}">
+        <a href="{{ post.url | relative_url }}">
+          <img src="{{ post.image | relative_url }}">
+        </a>
       </div>
       {% endif %}
       <p class="text-muted">
@@ -40,7 +44,11 @@ layout: default
     {%- endfor -%}
   </ul>
 
-  <p class="rss-subscribe mt-5">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  <div class="article">
+    <p>
+      <a href="{{ "/feed.xml" | relative_url }}">Subscribe via RSS</a>
+    </p>
+  </div>
   {%- endif -%}
 
 </div>

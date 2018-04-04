@@ -1,8 +1,19 @@
 
 .article {
   @extend .border;
-  @extend .p-3;
+  @extend .pt-3;
+  @extend .pr-3;
+  @extend .pl-3;
   @extend .bg-white;
+}
+
+body {
+  background-size: cover;
+  /*background-repeat: no-repeat;
+  background-position: center;
+  background-clip: border-box;
+  background-origin: border-box;*/
+  background-attachment: fixed;
 }
 
 .post-image {
