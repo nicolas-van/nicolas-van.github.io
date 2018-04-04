@@ -7,13 +7,16 @@
   @extend .bg-white;
 }
 
-body {
+.body-background {
   background-size: cover;
-  /*background-repeat: no-repeat;
-  background-position: center;
-  background-clip: border-box;
-  background-origin: border-box;*/
   background-attachment: fixed;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1000;
+  opacity: 0.6;
 }
 
 .post-image {
