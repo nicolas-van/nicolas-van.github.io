@@ -55,3 +55,55 @@ sudo service nginx restart
 ```
 
 That should be OK for the base configuration.
+
+## Setup of a user
+
+Here we'll install Node.js for our example:
+
+```bash
+sudo apt install nodejs npm
+# Update npm
+sudo npm install npm -g
+```
+
+Now we can create a user:
+
+```bash
+sudo adduser test
+```
+
+Let's make a little setup for that user by switching to him:
+
+```bash
+sudo su - test
+```
+
+OK, we're "him". Let's make a basic web application with Node.js:
+
+```bash
+mkdir app
+cd app
+npm init # enter what you want
+npm install --save connect commander
+cat > app.js << EOL
+var connect = require('connect');
+var http = require('http');
+var program = require('commander');
+
+program.option("-p, --port <port>", "The port", parseFloat)
+    .parse(process.argv);
+
+const port = program.port || 3000;
+
+var app = connect();
+
+app.use(function(req, res){
+  res.end('Hello world!\n');
+})
+
+http.createServer(app).listen(port);
+console.log(`Example app listening on http://127.0.0.1:${port}/`);
+EOL
+mkdir public # this is important for Passenger
+```
+
