@@ -104,6 +104,58 @@ app.use(function(req, res){
 http.createServer(app).listen(port);
 console.log("Example app listening on http://127.0.0.1:" + port);
 EOL
-mkdir public # this is important for Passenger
 ```
 
+We can test our simple website:
+
+```bash
+node app.js --port 4000 # Ctrl-C to stop
+```
+
+Now it's time we create some wrapper script for Passenger:
+
+```bash
+cat > app << EOL
+#! /bin/bash
+node app.js --port \$PORT
+EOL
+chmod a+x app
+mkdir public # This is important for Passenger
+```
+
+Time to go back to our normal user with sudo capabilities:
+
+```bash
+exit
+```
+
+Let's go create some nginx configuration for our `test` user.
+
+```bash
+cd /etc/nginx/sites-enabled/
+sudo nano test
+```
+
+Use this example configuration by adding the proper subdomain:
+
+```
+server {
+    listen 80;
+    server_name MY_SUBDOMAIN;
+
+    # Tell Nginx and Passenger where your app's 'public' directory is
+    root /home/test/app/public;
+
+    # Turn on Passenger
+    passenger_enabled on;
+    passenger_app_start_command "./app $PORT";
+}
+```
+
+Time to ask Nginx to reload its configuration:
+
+```bash
+sudo systemctl reload nginx
+```
+
+Now your application should be available on the configured subdomain.
