@@ -6,6 +6,8 @@ title: How to setup a generic shared hosting environment with Passenger
 
 Here we will use it in conjunction with Nginx to setup a shared hosting environment with multiple users, each running their own web server with their environment of choice (we'll use Node.js, but you can use whatever you want as long as you install the dependencies). We'lle also start from a fresh Ubuntu server 18.04.
 
+Note that you will need one subdomain per user (or a wildcard pointing to your server).
+
 ## Installation of Nginx and Passenger
 
 First things first, let's install Passenger:
@@ -159,3 +161,9 @@ sudo systemctl reload nginx
 ```
 
 Now your application should be available on the configured subdomain.
+
+## Going further
+
+As you've seen it's just a matter of installing dependencies then writing a small wrapper script (and also providing a public folder for Passenger to serve public files). You could have multiple applications in completely different languages like Go, Python, Ruby, PHP, etc...
+
+The downsides to using Passenger is that it's not really a tool monitoring the CPU, RAM or disk usage of the processes it launches. So it would necessitates additionnal setup to be absolutely sure none of your users are doing anything wrong. But that's another story...
