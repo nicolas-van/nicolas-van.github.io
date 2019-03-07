@@ -6,7 +6,7 @@ title: How to setup a generic shared hosting environment with Passenger
 
 Here we will use it in conjunction with Nginx to setup a shared hosting environment with multiple users, each running their own web server with their environment of choice (we'll use Node.js, but you can use whatever you want as long as you install the dependencies). We'lle also start from a fresh Ubuntu server 18.04.
 
-## Installation of dependencies
+## Installation of Nginx and Passenger
 
 First things first, let's install Passenger:
 
@@ -30,13 +30,13 @@ A little command to validate it's working correctly:
 passenger-config validate-install
 ```
 
-Now we can install nginx:
+Now we can install Nginx:
 
 ```bash
 sudo apt-get install -y nginx
 ```
 
-And the relevant nginx plugin for passenger:
+And the relevant Nginx plugin for passenger:
 
 ```bash
 sudo apt-get install -y libnginx-mod-http-passenger
@@ -48,8 +48,10 @@ We also must activate the passenger plugin:
 if [ ! -f /etc/nginx/modules-enabled/50-mod-http-passenger.conf ]; then sudo ln -s /usr/share/nginx/modules-available/mod-http-passenger.load /etc/nginx/modules-enabled/50-mod-http-passenger.conf ; fi
 ```
 
-Time to restart nginx:
+Time to restart Nginx:
 
 ```bash
 sudo service nginx restart
 ```
+
+That should be OK for the base configuration.
