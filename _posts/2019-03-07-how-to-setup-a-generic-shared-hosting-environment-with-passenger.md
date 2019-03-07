@@ -4,7 +4,7 @@ title: How to setup a generic shared hosting environment with Passenger
 
 [Passenger](https://www.phusionpassenger.com/) is a nice little web server that has the capability to start, stop and scale web server applications with ease.
 
-Here we will use it in conjunction with Nginx to setup a shared hosting environment with multiple users, each running their own web server with their environment of choice (we'll use Node.js, but you can use whatever you want as long as you install the dependencies). We'lle also start from a fresh Ubuntu server 18.04.
+Here we will use it in conjunction with Nginx to setup a shared hosting environment with multiple users, each running their own web server with their environment of choice (we'll use Node.js, but you can use whatever you want as long as you install the dependencies). We will also start from a fresh Ubuntu server 18.04.
 
 Note that you will need one subdomain per user (or a wildcard pointing to your server).
 
