@@ -102,7 +102,7 @@ app.use(function(req, res){
 })
 
 http.createServer(app).listen(port);
-console.log(`Example app listening on http://127.0.0.1:${port}/`);
+console.log("Example app listening on http://127.0.0.1:" + port);
 EOL
 mkdir public # this is important for Passenger
 ```
